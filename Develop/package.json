@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "inquirer": "^6.5.2",
-    "prompt": "^1.2.2"
+    "prompt": "^1.2.2",
+    "prompt-list": "^3.2.0"
   }
 }

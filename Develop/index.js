@@ -4,6 +4,8 @@
 const fs = require('fs')
 const inquirer = require('inquirer')
 const prompt = require('prompt')
+const List = require('prompt-list')
+
 
 
 // Format function
@@ -44,7 +46,18 @@ function writeToFile(fileName, data) {
         
     })
    
+
 }
+
+var listObj = new List ({
+    name: 'license',
+    message: 'Please choose a license for your application',
+    choices: [
+        'Choice 1',
+        'Choice 2',
+        'Choice 3'
+    ]
+})
 
 // TODO: Create an array of questions for user input
 inquirer.prompt([{
@@ -62,11 +75,19 @@ inquirer.prompt([{
 {
     name: 'use',
     message: 'Please provide instructions on how to use your application'
-},
+}, 
 {
+    type: 'list',
     name: 'license',
-    message: 'Please choose a license for your application'
+    message: 'Please choose a license for your application',
+    choices: [
+        'Choice 1',
+        'Choice 2',
+        'Choice 3'
+    ]
 }
+
+
 ]
 ).then(answers=>{
     fs.writeFile('README.md', `# ${answers.title}`, function(err, result){

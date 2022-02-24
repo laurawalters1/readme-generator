@@ -1,4 +1,4 @@
-# Readme Generator 
+# title 
 ## Table of contents
 1. Description
 2. How to install
@@ -6,14 +6,14 @@
 4. Licensing
 
 ### Description:
-This application is a readme generator, that will create a well-organised readme.md file for a user, based on their input.
+nrjenjrkenjgnrjekgnejrkn
 
 ### Installation:
-Install it like this
+eghkrebhkgrhjke
 
 ### How to use:
-Use it like this
+njrekngjkrengjkr
 
 ### Licensing:
-The licensing is this
+Choice 3
     

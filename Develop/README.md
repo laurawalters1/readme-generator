@@ -1,21 +1,19 @@
-readme
-    #readme
+# Readme Generator 
+## Table of contents
+1. Description
+2. How to install
+3. How to use
+4. Licensing
 
-    #Table of contents
-    -[1. Description]
-    -[2. How to install]
-    -[3. How to use]
-    -[4. Licensing]
+### Description:
+This application is a readme generator, that will create a well-organised readme.md file for a user, based on their input.
 
-    ##Description:
-    descr
+### Installation:
+Install it like this
 
-    ##Installation:
-    inst
+### How to use:
+Use it like this
 
-    ##How to use:
-    user
-
-    ##Licensing:
-    lice
+### Licensing:
+The licensing is this
     

@@ -10,32 +10,32 @@ const prompt = require('prompt')
 
 function formatReadme(data){
     const parsedData = JSON.parse(data)
-    return `
-    #${parsedData.title}
+    return ` 
+## Table of contents
+1. Description
+2. How to install
+3. How to use
+4. Licensing
 
-    #Table of contents
-    -[1. Description]
-    -[2. How to install]
-    -[3. How to use]
-    -[4. Licensing]
+### Description:
+${parsedData.description}
 
-    ##Description:
-    ${parsedData.description}
+### Installation:
+${parsedData.install}
 
-    ##Installation:
-    ${parsedData.install}
+### How to use:
+${parsedData.use}
 
-    ##How to use:
-    ${parsedData.use}
-
-    ##Licensing:
-    ${parsedData.license}
+### Licensing:
+${parsedData.license}
     `
 }
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
+    // Assign what is returned from the formatReadme function when the data paramter is passed in to a variable called formattedData
     const formattedData = formatReadme(data)
+    // Pass in formatted data into the append file function
     fs.appendFile(fileName, formattedData, function(err, result){
         
         if(err){
@@ -69,7 +69,7 @@ inquirer.prompt([{
 }
 ]
 ).then(answers=>{
-    fs.writeFile('README.md', answers.title, function(err, result){
+    fs.writeFile('README.md', `# ${answers.title}`, function(err, result){
         if(err){
             console.log("There was an error")
         }

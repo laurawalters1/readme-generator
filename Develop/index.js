@@ -1,5 +1,3 @@
-// THEN a high-quality, professional README.md is generated with the title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
-
 // TODO: Include packages needed for this application
 const fs = require("fs");
 const inquirer = require("inquirer");
@@ -15,9 +13,6 @@ function License(name, descr, url, badgeSrc) {
   this.badgeSrc = badgeSrc;
 }
 
-License.prototype.returnUrl = () => {
-  return this.descr;
-};
 // Instantiating license objects
 
 const apache2 = new License(
@@ -111,7 +106,14 @@ const theUniLicense = new License(
   "https://img.shields.io/badge/license-Unlicense-blue.svg"
 );
 
-const none = new License("", "", "", "");
+const none = new License(
+  "None",
+  "This application is not covered by a license",
+  "",
+  ""
+);
+
+// Declaring licenses array
 
 const licenses = [
   apache2,
@@ -130,7 +132,7 @@ const licenses = [
   none,
 ];
 
-// Filter through license objects
+// Filter through license objects to return the one that matches the user choice
 
 function filterLicense(answer) {
   return licenses.find(function (license) {
@@ -138,12 +140,16 @@ function filterLicense(answer) {
   });
 }
 
-// Format function
+// Format function - Takes user answers object as a parameter
 
 function formatReadme(data) {
+  // Parsing the stringified data so that it can be used as an object
   const parsedData = JSON.parse(data);
+  // Stringify the object returned by the filterLicense function
   const licenseJsonObj = JSON.stringify(filterLicense(parsedData.license));
+  // Parse the string from above so it can be used as an object
   const licenseParsedObj = JSON.parse(licenseJsonObj);
+  // Formatting the data
   return ` 
   <a href="${licenseParsedObj.url}"><img src="${licenseParsedObj.badgeSrc}"></a>
 ## Table of contents
@@ -153,7 +159,13 @@ function formatReadme(data) {
 
 [3) How to use](#how-to-use)
 
-[4) Licensing](#licensing)
+[4) Contribution guidelines](#contribution-guidelines)
+
+[5) Testing guidelines](#testing-guidelines)
+
+[6) Licensing](#licensing)
+
+[7) Questions](#questions)
 
 ### Description:
 ${parsedData.description}
@@ -163,6 +175,12 @@ ${parsedData.install}
 
 ### How to use:
 ${parsedData.use}
+
+### Contribution guidelines:
+${parsedData.contribution}
+
+### Testing Guidelines:
+${parsedData.testing}
 
 ### Licensing:
 ${licenseParsedObj.descr}
@@ -184,12 +202,6 @@ function writeToFile(fileName, data) {
   });
 }
 
-var listObj = new List({
-  name: "license",
-  message: "Please choose a license for your application",
-  choices: ["Choice 1", "Choice 2", "Choice 3"],
-});
-
 // TODO: Create an array of questions for user input
 inquirer
   .prompt([
@@ -208,6 +220,14 @@ inquirer
     {
       name: "use",
       message: "Please provide instructions on how to use your application",
+    },
+    {
+      name: "contribution",
+      message: "Please provide contribution guidelines for your application",
+    },
+    {
+      name: "testing",
+      message: "Please provide testing guidelines for your application",
     },
     {
       type: "list",
@@ -230,19 +250,11 @@ inquirer
       if (err) {
         console.log("There was an error");
       }
-      console.log(filterLicense(answers.license));
+
+      // Stringify answers object so that it can be passed into writeToFile
       writeToFile("README.md", JSON.stringify(answers));
     });
   });
-
-const questions = [
-  "Please provide the title of your application",
-  "Please provide a description of your application",
-  "Please provide a table of contents",
-  "Please provide instructions on how to install your application",
-  "Please provide instructions on how to use your application",
-  "Please choose a license for your application",
-];
 
 // TODO: Create a function to initialize app
 function init() {}

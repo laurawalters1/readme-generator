@@ -1,4 +1,4 @@
-# frnejngjren 
+# Readme Generator 
   <a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg"></a>
 ## Table of contents
 [1) description](#description)
@@ -7,16 +7,28 @@
 
 [3) How to use](#how-to-use)
 
-[4) Licensing](#licensing)
+[4) Contribution guidelines](#contribution-guidelines)
+
+[5) Testing guidelines](#testing-guidelines)
+
+[6) Licensing](#licensing)
+
+[7) Questions](#questions)
 
 ### Description:
-rejngjntgt
+This application is a readme generator
 
 ### Installation:
-renjjrnejner
+install like this
 
 ### How to use:
-rejnrefjnrfe
+use like this
+
+### Contribution guidelines:
+contribute
+
+### Testing Guidelines:
+test
 
 ### Licensing:
 This application is covered under Apache 2.0 License

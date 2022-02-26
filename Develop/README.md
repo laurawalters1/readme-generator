@@ -1,4 +1,4 @@
-# Readme Generator 
+# Good Readme Generator 
   <a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg"></a>
 ## Table of contents
 [1) description](#description)
@@ -16,19 +16,19 @@
 [7) Questions](#questions)
 
 ### Description:
-This application is a readme generator
+This application acts as a generator that will create a readme file for the user, which is pre-formatted and based on their responses to the prompts that run in the terminal.
 
 ### Installation:
-install like this
+You should install the application like this:...
 
 ### How to use:
-use like this
+To use the application, you should open the index file in the integrated terminal, then you should run the command: 'node index', following this you should respond to the prompts that run in the terminal with the relevant information.
 
 ### Contribution guidelines:
-contribute
+If you would like to contribute to the application, please do this: ...
 
 ### Testing Guidelines:
-test
+To test the application, please do this: ...
 
 ### Licensing:
 This application is covered under Apache 2.0 License

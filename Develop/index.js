@@ -24,7 +24,7 @@ const apache2 = new License(
   "Apache License 2.0",
   "This application is covered under Apache 2.0 License",
   "https://opensource.org/licenses/Apache-2.0",
-  "https://img.shields.io/badge/License-Apache_2.0-blue.svg)"
+  "https://img.shields.io/badge/License-Apache_2.0-blue.svg"
 );
 
 const gnuV3 = new License(
@@ -147,10 +147,13 @@ function formatReadme(data) {
   return ` 
   <a href="${licenseParsedObj.url}"><img src="${licenseParsedObj.badgeSrc}"></a>
 ## Table of contents
-1. Description
-2. How to install
-3. How to use
-4. Licensing
+[1) description](#description)
+
+[2) How to install](#installation)
+
+[3) How to use](#how-to-use)
+
+[4) Licensing](#licensing)
 
 ### Description:
 ${parsedData.description}
@@ -163,7 +166,10 @@ ${parsedData.use}
 
 ### Licensing:
 ${licenseParsedObj.descr}
-    `;
+
+### Questions:
+To view my other deployed projects, take a look at <a href="https://github.com/${parsedData.github}">My Github profile</a>
+Or for any questions regarding this, or any of my other deployed projects, please contact me via <a href="mailto:${parsedData.email}">Email</a>    `;
 }
 
 // TODO: Create a function to write README file
@@ -208,6 +214,15 @@ inquirer
       name: "license",
       message: "Please choose a license for your application",
       choices: licenses,
+    },
+    {
+      name: "github",
+      message: "Please provide your github username",
+    },
+    {
+      name: "email",
+      message:
+        "Please provide the email address with which you would like users to be able to reach out to you",
     },
   ])
   .then((answers) => {
